@@ -73,3 +73,4 @@ function updateValues(){
 }
 
 init();
+//teste de conexao
