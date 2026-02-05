@@ -54,6 +54,10 @@ h2 {
   letter-spacing: 1px;
   color: var(--text-sub);
   margin-bottom: 8px;
+  text-align: center;
+}
+.balance{
+  text-align: center;
 }
 
 #balance-amount {
