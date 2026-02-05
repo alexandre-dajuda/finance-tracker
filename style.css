@@ -1,138 +1,187 @@
+/* ==========================================================================
+   PREMIUM MODERN UI (Soft & Dynamic)
+   ========================================================================== */
+
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --primary: #6366f1; /* Indigo moderno */
+  --primary-hover: #4f46e5;
+  --bg-body: #f8fafc; /* Cinza quase branco, muito chique */
+  --card-white: #ffffff;
+  --text-main: #1e293b;
+  --text-sub: #64748b;
+  --success: #10b981;
+  --danger: #ef4444;
+  --radius: 20px; /* Arredondamento moderno e suave */
+  --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: #f7f7f7;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', sans-serif; /* Fonte ultra moderna */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-}
-.balance {
-  text-align: center;
 }
 
+/* ==========================================================================
+   DASHBOARD CARD
+   ========================================================================== */
+
 .container {
-  margin: 30px auto;
-  width: 350px;
-  background-color: #f0efef;
-  padding: 20px;
-  border-radius: 10px ;
+  width: 420px;
+  background: var(--card-white);
+  padding: 40px;
+  border-radius: 32px; /* Super arredondado */
+  box-shadow: var(--shadow);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 h2 {
-  text-align: center;
-  margin: 0;
-  padding-bottom: 10px;
-}
-
-h3 {
-  border-bottom: 1px solid #bbb;
-  padding-bottom: 10px;
-  margin: 40px 0 10px;
-}
-
-h4 {
-  margin: 0;
+  font-size: 14px;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
 }
+
+#balance-amount {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -2px;
+}
+
+/* ==========================================================================
+   DYNAMIC INFO BOXES
+   ========================================================================== */
 
 .inc-exp-container {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  padding: 20px;
   display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-  text-align: center;
+  gap: 15px;
+  margin-bottom: 35px;
 }
 
 .inc-exp-container > div {
   flex: 1;
+  padding: 20px;
+  background: #f1f5f9; /* Fundo suave */
+  border-radius: var(--radius);
+  text-align: center;
 }
 
-.inc-exp-container > div:first-of-type {
-  border-right: 1px solid #dedede;
+.inc-exp-container h4 {
+  font-size: 11px;
+  color: var(--text-sub);
+  margin-bottom: 5px;
 }
 
 .money {
-  font-size: 20px;
-  letter-spacing: 1px;
-  margin: 5px 0;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.money.plus {
-  color: #2ecc71;
-}
+.money.plus { color: var(--success); }
+.money.minus { color: var(--danger); }
 
-.money.minus {
-  color: #c0392b;
-}
+/* ==========================================================================
+   LIST & TRANSACTIONS
+   ========================================================================== */
 
-label {
-  display: inline-block;
-  margin: 10px 0;
-}
-
-input[type='text'],
-input[type='number'] {
-  border: 1px solid #dedede;
-  border-radius: 2px;
-  display: block;
+h3 {
   font-size: 16px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn-add {
-  cursor: pointer;
-  background-color: #4a30d0;
-  box-shadow: var(--box-shadow);
-  color: #fff;
-  border: 0;
-  display: block;
-  font-size: 16px;
-  margin: 10px 0 30px;
-  padding: 10px;
-  width: 100%;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.btn-add:hover {
-  background-color: #6555cd;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .list {
-  list-style-type: none;
-  padding: 0;
-  margin-bottom: 40px;
+  list-style: none;
+  margin-bottom: 30px;
 }
 
 .list li {
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
-  color: #333;
+  background: var(--card-white);
+  border: 1px solid #f1f5f9;
+  padding: 16px;
+  margin-bottom: 12px;
+  border-radius: 16px;
   display: flex;
   justify-content: space-between;
-  position: relative;
-  padding: 10px;
-  margin: 10px 0;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-/* Bordas coloridas para o histórico */
-.list li.plus {
-  border-right: 5px solid #2ecc71;
+.list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.list li.minus {
-  border-right: 5px solid #c0392b;
+.delete-btn {
+  background: #fee2e2;
+  color: var(--danger);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   MODERN FORM
+   ========================================================================== */
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+  display: block;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  background: #f8fafc;
+  border: 2px solid #f1f5f9;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+}
+
+.btn-add {
+  width: 100%;
+  background: var(--primary);
+  color: white;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.4);
+}
+
+.btn-add:hover {
+  background: var(--primary-hover);
+  transform: scale(1.01);
 }
