@@ -31,6 +31,3 @@ During the development of this project, I strengthened my skills in:
 3.  **Modern CSS:** Mastering `border-radius`, `box-shadow` depth, and layout consistency.
 4.  **Deployment Workflow:** Setting up a professional pipeline from local development to production via Vercel.
 
-1. Clone the repository:
-   ```bash
-   git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
